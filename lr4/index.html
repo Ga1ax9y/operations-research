@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алгоритм поиска наидлиннейшего пути</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2d3436;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 10px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f8f9ff;
+            margin-bottom: 20px;
+        }
+
+        .upload-area:hover {
+            border-color: #764ba2;
+            background: #f0f2ff;
+        }
+
+        .upload-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .file-format {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .result-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+
+        .path-display {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2d3436;
+            padding: 10px;
+            background: #e3f2fd;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .length-display {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #4caf50;
+            padding: 10px;
+            background: #e8f5e8;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .error {
+            color: #e74c3c;
+            background: #ffeaea;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .process-steps {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .step {
+            margin: 5px 0;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Задача о наидлиннейшем пути из заданной вершины в заданную вершину в направленном графе без контуров</h1>
+
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <h3>Загрузите файл с графом</h3>
+            <input type="file" id="fileInput" accept=".txt">
+            <div class="file-format">
+                <strong>Формат файла:</strong><br>
+                1 строка: начальная вершина<br>
+                2 строка: конечная вершина<br>
+                Далее рёбра: "вершина1 вершина2 длина"<br>
+                <br>
+                <strong>Пример:</strong><br>
+                S<br>
+                T<br>
+                S A 3<br>
+                S C 2<br>
+                C A 2<br>
+                C D 2<br>
+                A B 4<br>
+                B T 2<br>
+                B D 1<br>
+                D T 1
+            </div>
+        </div>
+
+        <button id="calculateBtn" disabled>Найти наидлиннейший путь</button>
+
+        <div class="results" id="results">
+            <h3>Результаты</h3>
+            <div id="graphInfo"></div>
+            <div id="processInfo"></div>
+            <div id="pathResult"></div>
+            <div id="lengthResult"></div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
