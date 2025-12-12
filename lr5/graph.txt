@@ -1,0 +1,13 @@
+S
+T
+S A 3
+A S 0
+A T 1
+T A 0
+A B 2
+B A 0
+S B 2
+B S 0
+B T 2
+T B 0
+
